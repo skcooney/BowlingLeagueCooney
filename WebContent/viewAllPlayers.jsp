@@ -10,14 +10,13 @@
 <body>
 <form method = "post" action = "viewAllPlayersServlet">
 	<table>
-	<c:forEach players = "${requestScope.allPlayers}" var = "currentplayer">
+	<c:forEach items = "${requestScope.allPlayers}" var ="currentplayer">
 	<tr>
 		<td><input type = "radio" name = "id" value = "${currentplayer.playerId}"></td>
 		<td>${currentplayer.firstName}</td>
 		<td>${currentplayer.lastName}</td>
 		<td>${currentplayer.phoneNumber}</td>
 		<td>${currentplayer.screenName}</td>
-		<td>${currentplayer.team}</td>
 	</tr>
 	</c:forEach>
 	</table>

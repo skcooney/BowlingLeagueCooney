@@ -8,9 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form method = "post" action = "viewAllTeamsServlet">
+<form method = "post" action = "viewAllTeamsWithPlayersServlet">
 	<table>
-	<c:forEach teams = "${requestScope.allTeams}" var = "currentteam">
+	<c:forEach items = "${requestScope.allTeams}" var = "currentteam">
 	<tr>
 		<td><input type = "radio" name = "id" value = "${currentteam.teamId}"></td>
 		<td>${currentteam.teamName}</td>
