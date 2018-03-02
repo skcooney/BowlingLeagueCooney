@@ -7,8 +7,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
-import model.Artwork;
-import model.ListItem;
 import model.Player;
 import model.team;
 
