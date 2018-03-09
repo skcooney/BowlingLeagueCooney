@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.team;
+import model.Team;
 
 
 
@@ -26,15 +26,7 @@ public class addTeamServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	/*protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-	*/
-
+	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -44,11 +36,9 @@ public class addTeamServlet extends HttpServlet {
 		String teamName = request.getParameter("teamName");
 		String teamType = request.getParameter("teamType");
 		String perferredNight = request.getParameter("preferredNight");
-		
-		
-		team t = new team(teamName, teamType, perferredNight);
-		teamHelper dao = new teamHelper();
-		dao.insertTeam(t);
+		TeamHelper th = new TeamHelper();
+		Team t = new Team(teamName, teamType, perferredNight);
+		th.insertTeam(t);
 		
 		getServletContext().getRequestDispatcher("/addTeam.html").forward(request, response);
 	}

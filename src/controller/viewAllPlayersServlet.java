@@ -30,7 +30,7 @@ public class viewAllPlayersServlet extends HttpServlet {
 		PlayerHelper ph = new PlayerHelper();
 		request.setAttribute("allPlayers", ph.showAllPlayers());
 		if(ph.showAllPlayers().isEmpty()) {
-			request.setAttribute("allPlayers", " ");
+		
 		}
 		getServletContext().getRequestDispatcher("/viewAllPlayers.jsp").forward(request, response);
 	}

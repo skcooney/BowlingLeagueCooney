@@ -5,22 +5,38 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Team List</title>
+<style>
+table, td, th{
+	border: 1px solid black;
+	boarder-collapse: seperate;
+	padding: 2px
+}
+</style>
 </head>
 <body>
-<form method = "post" action = "viewAllTeamsWithPlayersServlet">
+<h2>Team List</h2>
+	<form method = "post" action = "editTeamServlet">
 	<table>
-	<c:forEach items = "${requestScope.allTeams}" var = "currentteam">
+			<tr>
+			<th>Team Id</th>
+			<th>Team Name</th>
+			<th>Team Type</th>
+			<th>Preferred Night</th>
+			</tr>
+			
+	<c:forEach items = "${requestScope.allTeams}" var = "currentTeam">
 	<tr>
-		<td><input type = "radio" name = "id" value = "${currentteam.teamId}"></td>
-		<td>${currentteam.teamName}</td>
-		<td>${currentteam.teamType}</td>
-		<td>${currentteam.preferredNight}</td>
+		<td><input type = "radio" name = "id" value = "${currentTeam.teamId}">${currentTeam.teamId}</td>
+		<td>${currentTeam.teamName}</td>
+		<td>${currentTeam.teamType}</td>
+		<td>${currentTeam.preferredNight}</td>
 	</tr>
 	</c:forEach>
-	</table>
-	<input type = "submit" value = "Delete Selected Team" name = "doThisToTeam">
+	</table><br/>
+	<input type = "submit" value = "Delete Team and Players on Team" name = "doThisToTeam"><br /><br />
 	<input type = "submit" value = "Add New Team" name = "doThisToTeam">
-	</form>
-</body>
+	</form><br />
+	<a href ="index.html"> Back to Main Menu</a><br/>
+	</body>
 </html>

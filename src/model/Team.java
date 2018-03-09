@@ -8,8 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="team")
-public class team {
+@Table(name="Team")
+public class Team {
 	
 	
 	@Id
@@ -24,28 +24,25 @@ public class team {
 	private String preferredNight;
 	
 	
-	public team() {
+	public Team() {
 		super();
 		// TODO Auto-generated constructor stub
 		
 			}
+	
 
-	public team(int teamId, String teamName, String teamType, String preferredNight) {
+	public Team(String name) {
 		super();
-		this.teamId = teamId;
-		this.teamName = teamName;
-		this.teamType = teamType;
-		this.preferredNight = preferredNight;
+		this.setTeamName (name);
 	}
 
-	
-	
-	public team(String teamName, String teamType, String preferredNight) {
+	public Team(String name, String type, String night) {
 		super();
-		this.teamName = teamName;
-		this.teamType = teamType;
-		this.preferredNight = preferredNight;
+		this.teamName = name;
+		this.teamType = type;
+		this.preferredNight = night;
 	}
+
 
 	public int getTeamId() {
 		return teamId;
@@ -78,14 +75,16 @@ public class team {
 	public void setPreferredNight(String preferredNight) {
 		this.preferredNight = preferredNight;
 	}
-
-
-	@Override
-	public String toString() {
-		return "team [teamId=" + teamId + ", teamName=" + teamName + ", teamType=" + teamType + ", preferredNight="
-				+ preferredNight + "]";
-	}
-
-	
-	
 }
+
+	/*@Override
+	public String toString() {
+		return "Team [teamId=" + teamId + ", teamName=" + teamName + ", teamType=" + teamType + ", preferredNight="
+				+ preferredNight + "]";
+				
+	*/
+	
+
+	
+	
+

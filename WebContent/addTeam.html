@@ -2,14 +2,24 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Add Player</title>
 </head>
 <body>
-<form action ="addTeamServlet" method="post">
-Team Name: <input type = "text" name = "teamName">
-Team Type: <input type = "text" name = "teamType">
-Preferred Night: <input type = "text" name = "preferredNight">
+<h2> Add a Team</h2>
+	<form action ="addTeamServlet" method="post">
+Team Name: <input type = "text" name = "teamName"><br />
+Team Type: <input type = "text" name = "teamType"><br />
+Preferred Night: <select name = "preferredNight">
+	<option value = monday>Monday</option>
+	<option value = tuesday>Tuesday</option>
+	<option value = wednesday>Wednesday</option>
+	<option value = thursday>Thursday</option>
+	<option value = friday>Friday</option>
+	<option value = saturday>Saturday</option>
+	<option value = sunday>Sunday</option>
+	</select>
 <input type ="submit" value="Add Team">
 </form>
+<a href = "index.html">Return to Main Menu</a><br/>
 </body>
 </html>
